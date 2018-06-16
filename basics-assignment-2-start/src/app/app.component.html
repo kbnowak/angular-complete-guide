@@ -4,3 +4,16 @@
   <li>Add a button which may only be clicked if the username is NOT an empty string</li>
   <li>Upon clicking the button, the username should be reset to an empty string</li>
 </ol>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <label>Username </label>
+      <input type="text" class="form-control" [(ngModel)]="username" (input)="usernameChanged()">
+      <p>{{username}}</p>
+      <button class="btn btn-primary" [disabled]="usernameEmpty" (click)="resetUsername()">Reset username</button>
+    </div>
+  </div>
+</div>
+
+
