@@ -6,8 +6,10 @@
   </div>
   <div class="row">
     <div class="col-xs-6">
-      <p *ngFor="let number of numbers"><app-even [storedNumber]="number"></app-even>
-      </p>
+      <div *ngFor="let number of numbers">
+        <app-even *ngIf="number%2===0" [storedNumber]="number"></app-even>
+        <app-odd *ngIf="number%2!==0" [storedNumber]="number"></app-odd>
+      </div>
     </div>
   </div>
   <div class="row">
