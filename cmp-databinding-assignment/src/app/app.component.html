@@ -1,6 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <app-game-control (numberEmitted)="addNumber($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <p *ngFor="let number of numbers"><app-even [storedNumber]="number"></app-even>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
       <h3>Bind it!</h3>
       <ol>
         <li>Create three new components: GameControl, Odd and Even</li>
