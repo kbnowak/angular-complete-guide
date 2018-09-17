@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {UsersService} from '../users.service';
+import {CounterService} from '../counter.service';
 
 @Component({
   selector: 'app-inactive-users',
@@ -7,7 +8,7 @@ import {UsersService} from '../users.service';
   styleUrls: ['./inactive-users.component.css']
 })
 export class InactiveUsersComponent {
-  constructor(private userService: UsersService) {
+  constructor(private userService: UsersService, private counterService: CounterService) {
     this.users = this.userService.inactiveUsers;
   }
 
@@ -15,5 +16,6 @@ export class InactiveUsersComponent {
 
   onSetToActive(id: number) {
     this.userService.setToActive(id);
+    this.counterService.increaseCounter();
   }
 }
